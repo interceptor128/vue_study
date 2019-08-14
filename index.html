@@ -4,7 +4,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        
         <div id="app">
             {{ message }}
         </div>
@@ -13,6 +12,9 @@
             Hover your mouse over me for a few seconds
             to see my dynamically bound title!
             </span>
+        </div>
+        <div id="app-3">
+            <span v-if="seen">Now you see me</span>
         </div>
         <script src="index.js"></script>
     </body>
