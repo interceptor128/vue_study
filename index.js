@@ -59,3 +59,15 @@ var app7 = new Vue({
     ]
   }
 })
+var app8 = new Vue({
+  el: '#app-8',
+  data: {
+    message: 'Hello Vue.js!',
+    temp: ''
+  },
+  methods: {
+    reverseMessage: function(){
+      this.temp = this.message.split('').reverse().join('')
+    }
+  }
+})

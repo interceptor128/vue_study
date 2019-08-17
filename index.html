@@ -40,6 +40,14 @@
                 ></todo-item>
             </ol>
         </div>
+        <div id="app-8">
+            <p>反転したい文字列を入力↓</p>
+            <input v-model="message">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">reverseMessage</button>
+            <p>反転した文字列↓</p>
+            <p>{{ temp }}</p>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
