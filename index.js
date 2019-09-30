@@ -71,3 +71,39 @@ var app8 = new Vue({
     }
   }
 })
+var app9 = new Vue({
+  el: '#app-9',
+  data: {
+    inputText: '',
+    outputText: []
+  },
+  methods: {
+    anagramOutput: function(){
+      var tempList = ''
+      tempList = this.inputText.split('')
+      this.outputText = this.anagramCreate(tempList)
+    },
+    anagramCreate: function(tempList){
+      if(tempList.length === 0){
+        return null;
+      }
+      if(tempList.length === 1){
+        return [[tempList[0]]];
+      }
+      var result = [], head, copyList;
+      for( var i = 0 , n = tempList.length; i<n ; i++ ){
+        //配列のコピー
+        copyList = tempList.slice(0);
+        //i番目の配列を抜きだす
+        head = copyList.splice( i,1 );
+        //再起処理
+        newList = this.anagramCreate( copyList );
+        for( var j = 0 , m = newList.length ; j<m ; j++ ){
+          newList[j].unshift( head[0] );
+          result.push( newList[j] );
+        }
+      }
+      return result;
+    }
+  }
+})

@@ -56,6 +56,15 @@
             <p>反転した文字列↓</p>
             <p>{{ temp }}</p>
         </div>
+        <div id="app-9">
+            <h2>Vue app-9 アナグラム生成</h2>
+            <input v-model="inputText">
+            <button v-on:click="anagramOutput">生成</button>
+            <li v-for="item in items">
+                {{ item.message }}
+            </li>
+            <p>{{ outputText }}</p>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
